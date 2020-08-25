@@ -8,36 +8,39 @@
 
 在项目的根目录的build.gradle文件中添加如下代码<br>
 ```
-   maven {  
-            url "https://raw.githubusercontent.com/Zandermei/OkHttp3Utils/master"
-        }
+   maven { url 'https://jitpack.io' }
 ```
 
 添加完成后的效果如下
 ```
-allprojects {
-    
-    repositories {
-        google()
-        jcenter()
-        
-        maven {
-            url "https://raw.githubusercontent.com/Zandermei/OkHttp3Utils/master"
+    allprojects {
+        repositories {
+	   
+            maven { url 'https://jitpack.io' }
         }
-
     }
-}
 
 ```
-----------在自己的--Application--中添加----
+<br>
+
+步骤2.添加依赖项<br>
+
+```
+	dependencies {
+		....省略了其他依赖
+	        implementation 'com.github.Zandermei:MyOkHttp:1.0'
+	}
+```
+
+
+
+----------在自己的--Application--中初始化网络------
 ```
         //初始化网络请求
         OkHttp3Utils.initEvent();
+	
 ```
 ----配置完成---即可使用----<br>
-
-
-
 
 ---------------GET-无参数请求-请求----------
 ```
